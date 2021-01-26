@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.19.2)
 
 # Set project details.
 project(CodeAnim VERSION 0.1)

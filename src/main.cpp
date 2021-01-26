@@ -3,7 +3,10 @@
 
 #include <chaiscript/chaiscript.hpp>
 
+#include "CodeAnim/Production.hpp"
+
 using namespace std;
+using namespace CodeAnim;
 
 int main(int argc, char* argv[]) {
     cout << CODEANIM_PROJECT_NAME << " v" << CODEANIM_VERSION_MAJOR << "." << CODEANIM_VERSION_MINOR
@@ -18,6 +21,8 @@ int main(int argc, char* argv[]) {
 
     // Initialize the ChaiScript engine.
     chaiscript::ChaiScript chai;
+    chai.add(chaiscript::constructor<Production(int, int)>(), "Production");
+    chai.add(chaiscript::user_type<Production>(), "Production");
 
     // Start evaluating the ChaiScript code.
     try {
