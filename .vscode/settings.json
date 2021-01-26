@@ -1,6 +1,9 @@
 {
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "C_Cpp.intelliSenseEngine": "Tag Parser",
     "files.associations": {
-        "*.in": "cpp"
+        "*.in": "cpp",
+        "ios": "cpp",
+        "ostream": "cpp"
     }
 }

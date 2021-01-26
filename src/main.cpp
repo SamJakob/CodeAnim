@@ -1,9 +1,9 @@
-#include "CodeAnimConfig.h"
+#include <CodeAnimConfig.h>
 #include <iostream>
 
 #include <chaiscript/chaiscript.hpp>
 
-#include "CodeAnim/Production.hpp"
+#include "api/Production.hpp"
 
 using namespace std;
 using namespace CodeAnim;
@@ -23,6 +23,7 @@ int main(int argc, char* argv[]) {
     chaiscript::ChaiScript chai;
     chai.add(chaiscript::constructor<Production(int, int)>(), "Production");
     chai.add(chaiscript::user_type<Production>(), "Production");
+    chai.add(chaiscript::fun(&Production::show), "show");
 
     // Start evaluating the ChaiScript code.
     try {

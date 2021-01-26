@@ -1,1 +1,6 @@
-add_executable(CodeAnim main.cpp)
+file(GLOB CodeAnim_SRC
+    "*.cpp"
+    "*/*.cpp"
+)
+
+add_executable(CodeAnim ${CodeAnim_SRC})
