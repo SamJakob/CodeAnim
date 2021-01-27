@@ -16,13 +16,21 @@ ProductionViewer::ProductionViewer(Production* production) {
     controller->signal_key_pressed().connect(
         sigc::mem_fun(*this, &ProductionViewer::on_window_key_pressed), false);
     add_controller(controller);
+
+    // Add production renderer.
+    this->renderer = new ProductionRenderer(this->production);
+    set_child(*this->renderer);
+    this->renderer->show();
 }
 
-ProductionViewer::~ProductionViewer() {}
+ProductionViewer::~ProductionViewer() = default;
 
-bool ProductionViewer::on_window_key_pressed(guint keyval, guint keycode, Gdk::ModifierType state) {
-    if ((state & Gdk::ModifierType::META_MASK) == Gdk::ModifierType::META_MASK &&
-        keyval == GDK_KEY_q) {
+bool ProductionViewer::on_window_key_pressed(guint keyVal, guint keycode, Gdk::ModifierType state) {
+    if (
+        keyVal == GDK_KEY_Escape || (
+            (state & Gdk::ModifierType::META_MASK) == Gdk::ModifierType::META_MASK && keyVal == GDK_KEY_q
+        )
+    ) {
         close();
         return true;
     }

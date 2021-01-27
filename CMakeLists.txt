@@ -2,9 +2,9 @@ cmake_minimum_required(VERSION 3.19.2)
 
 # Set project details.
 project(CodeAnim VERSION 0.1 LANGUAGES CXX)
-configure_file(gen/CodeAnimConfig.h.txt CodeAnimConfig.h)
+configure_file(gen/CodeAnimConfig.h.inc CodeAnimConfig.h)
 
-set(CMAKE_OSX_ARCHITECTURES arm64)
+set(CMAKE_OSX_ARCHITECTURES x86_64)
 
 # Specify C++ standard.
 set(CMAKE_CXX_STANDARD 20)

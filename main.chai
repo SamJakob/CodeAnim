@@ -1,2 +1,2 @@
-var production = Production(800, 600);
+var production = Production(800, 600, 60);
 production.show();

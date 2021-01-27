@@ -8,12 +8,14 @@ class Production {
   private:
     int width;
     int height;
+    int fps;
 
   public:
-    Production(int, int);
+    Production(int width, int height, int fps);
 
-    int getWidth();
-    int getHeight();
+    [[nodiscard]] int getWidth() const;
+    [[nodiscard]] int getHeight() const;
+    [[nodiscard]] int getFPS() const;
 
     void show();
 };
